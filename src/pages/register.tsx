@@ -19,15 +19,6 @@ import { ArrowRight, Eye, EyeOff, Check, Zap, Loader2, ShieldCheck, Brain, MapPi
 import { toast } from "sonner";
 import { Link, useNavigate } from "react-router-dom";
 
-/**
- * SynapseKZ — Register
- *
- * Design system: "serious infrastructure", light.
- * Split layout: ink brand panel (left) + warm-stone form (right).
- * Accent: deep teal #0F6E56.
- * All logic (zod schema, password-strength checks, signUp, Google OAuth) unchanged.
- */
-
 const C = {
   base: "#F5F2ED",
   surface: "#FFFFFF",
@@ -177,7 +168,7 @@ export default function Register() {
             <div className="flex h-9 w-9 items-center justify-center rounded-md" style={{ background: C.accent }}>
               <Zap className="h-5 w-5 text-white" strokeWidth={2.5} />
             </div>
-            <span className="syn-display text-xl font-bold tracking-tight">SynapseKZ</span>
+            <span className="syn-display text-xl font-bold tracking-tight">SynektaKZ</span>
           </Link>
 
           <div className="mb-7">
@@ -453,7 +444,7 @@ function BrandPanel() {
         <div className="flex h-9 w-9 items-center justify-center rounded-md" style={{ background: C.accent }}>
           <Zap className="h-5 w-5 text-white" strokeWidth={2.5} />
         </div>
-        <span className="syn-display text-xl font-bold tracking-tight">SynapseKZ</span>
+        <span className="syn-display text-xl font-bold tracking-tight">SynektaKZ</span>
       </Link>
 
       <div>
@@ -476,7 +467,7 @@ function BrandPanel() {
       </div>
 
       <p className="syn-mono text-[11px]" style={{ color: "#6E665B" }}>
-        © {new Date().getFullYear()} SynapseKZ
+        © {new Date().getFullYear()} SynektaKZ
       </p>
     </div>
   );

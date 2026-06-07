@@ -17,14 +17,6 @@ import { Link, useNavigate } from "react-router-dom";
 import { supabase } from "@/lib/supabase";
 import { useState } from "react";
 
-/**
- * SynapseKZ — Login
- *
- * Design system: "serious infrastructure", light.
- * Split layout: ink brand panel (left) + warm-stone form (right).
- * Accent: deep teal #0F6E56.
- * All auth logic (zod schema, sign-in, role-based redirect) is unchanged.
- */
 
 const C = {
   base: "#F5F2ED",
@@ -115,7 +107,7 @@ export default function Login() {
             <div className="flex h-9 w-9 items-center justify-center rounded-md" style={{ background: C.accent }}>
               <Zap className="h-5 w-5 text-white" strokeWidth={2.5} />
             </div>
-            <span className="syn-display text-xl font-bold tracking-tight">SynapseKZ</span>
+            <span className="syn-display text-xl font-bold tracking-tight">SynektaKZ</span>
           </Link>
 
           <div className="mb-8">
@@ -229,7 +221,7 @@ function BrandPanel() {
         <div className="flex h-9 w-9 items-center justify-center rounded-md" style={{ background: C.accent }}>
           <Zap className="h-5 w-5 text-white" strokeWidth={2.5} />
         </div>
-        <span className="syn-display text-xl font-bold tracking-tight">SynapseKZ</span>
+        <span className="syn-display text-xl font-bold tracking-tight">SynektaKZ</span>
       </Link>
 
       <div>
@@ -252,7 +244,7 @@ function BrandPanel() {
       </div>
 
       <p className="syn-mono text-[11px]" style={{ color: "#6E665B" }}>
-        © {new Date().getFullYear()} SynapseKZ
+        © {new Date().getFullYear()} SynektaKZ
       </p>
     </div>
   );

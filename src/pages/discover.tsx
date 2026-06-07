@@ -10,20 +10,7 @@ import {
 } from "lucide-react"
 import Fuse from "fuse.js"
 
-/**
- * SynapseKZ — Discover
- *
- * Design system: "serious infrastructure", light.
- *   Base   : warm stone  #F5F2ED
- *   Surface: #FFFFFF / #FBFAF7
- *   Ink    : #1A1714
- *   Accent : deep teal #0F6E56  (single signal color)
- *   Line   : #E4DFD5
- *   Mono   : JetBrains Mono for scores + labels
- *
- * All logic (semantic match, synergy insight, connect / express-interest /
- * reach-out flows, fuzzy search, role-based tabs) is unchanged.
- */
+
 
 const C = {
   base: "#F5F2ED",

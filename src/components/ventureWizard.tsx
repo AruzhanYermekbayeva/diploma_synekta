@@ -9,22 +9,6 @@ import { Textarea } from "@/components/ui/textarea";
 import Fuse from "fuse.js";
 import type { VentureForm, DbTags } from "@/venture";
 
-/**
- * SynapseKZ — VentureWizard
- *
- * Design system: "serious infrastructure", light.
- *   Base/Surface: #FFFFFF / #FBFAF7
- *   Ink         : #1A1714
- *   Accent      : deep teal #0F6E56
- *   Line        : #E4DFD5
- *
- * Tag categories keep a SUBTLE color distinction (it helps users track which
- * field they're filling) but in the warm/earthy family, not saturated rainbow.
- * Stage emojis replaced with lucide icons for a more serious tone.
- * All logic (validation, step animation, Fuse suggestions, save/retry,
- * keyboard handling) is unchanged.
- */
-
 const C = {
   surface: "#FFFFFF",
   surfaceSoft: "#FBFAF7",

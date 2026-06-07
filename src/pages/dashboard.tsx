@@ -13,20 +13,7 @@ import { VentureWizard } from "@/components/ventureWizard";
 import { EditVentureModal } from "@/components/EditVentureModal";
 import type { VentureForm, DbTags } from "@/venture";
 
-/**
- * SynapseKZ — Dashboard
- *
- * Design system: "serious infrastructure", light.
- *   Base   : warm stone  #F5F2ED  (page)
- *   Surface: #FFFFFF / #FBFAF7 (cards)
- *   Ink    : #1A1714  (primary text / primary buttons)
- *   Accent : deep teal #0F6E56  (single signal color — actions, scores, active)
- *   Line   : #E4DFD5  (hairline borders)
- *   Mono   : JetBrains Mono for metrics + labels (add font link to index.html)
- *
- * NOTE: All data logic (embedding generation, pagination, role handling,
- * delete-confirm, wizard/edit modals) is unchanged from the original.
- */
+
 
 const C = {
   base: "#F5F2ED",
@@ -335,7 +322,7 @@ export default function Dashboard() {
               My workspace
             </div>
             <h1 className="syn-display text-3xl font-bold leading-tight tracking-tight">
-              {entities.length > 0 ? "Your workspace" : "Welcome to SynapseKZ"}
+              {entities.length > 0 ? "Your workspace" : "Welcome to SynektaKZ"}
             </h1>
             <p className="mt-1.5 text-sm" style={{ color: C.muted }}>
               Everything you're working on across the ecosystem.

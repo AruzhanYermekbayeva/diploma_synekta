@@ -9,19 +9,6 @@ import { Label } from "@/components/ui/label";
 import Fuse from "fuse.js";
 import type { VentureForm, DbTags } from "@/venture";
 
-/**
- * SynapseKZ — EditVentureModal
- *
- * Design system: "serious infrastructure", light.
- *   Surface: #FFFFFF / #FBFAF7
- *   Ink    : #1A1714
- *   Accent : deep teal #0F6E56
- *   Line   : #E4DFD5
- *
- * Tag categories keep the same subtle earthy tints as the wizard.
- * Dropdown clip fixed: the scroll body no longer hides the autocomplete.
- * All logic (validation, save/error, Fuse suggestions) is unchanged.
- */
 
 const C = {
   surface: "#FFFFFF",

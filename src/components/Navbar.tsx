@@ -4,20 +4,6 @@ import { Search, LayoutDashboard, Zap, Bell, UserCircle } from "lucide-react"
 import { supabase } from "@/lib/supabase"
 import { useState, useEffect, useRef } from "react"
 
-/**
- * SynapseKZ — Navbar
- *
- * Design system: "serious infrastructure", light.
- *   Base   : warm stone  #F5F2ED
- *   Surface: #FFFFFF
- *   Ink    : #1A1714
- *   Accent : deep teal #0F6E56
- *   Line   : #E4DFD5
- *
- * All logic (realtime subscription, notification loading, outside-click,
- * timeAgo, role-based nav, logout) is unchanged.
- */
-
 const C = {
   surface: "#FFFFFF",
   surfaceSoft: "#FBFAF7",
@@ -307,7 +293,7 @@ export function Navbar() {
               <Zap className="h-4 w-4 text-white" strokeWidth={2.5} />
             </div>
             <span className="syn-display text-lg font-bold tracking-tight" style={{ color: C.ink }}>
-              SynapseKZ
+              SynektaKZ
             </span>
           </Link>
 

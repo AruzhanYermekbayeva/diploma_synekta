@@ -14,20 +14,6 @@ import {
 import Fuse from "fuse.js"
 import { Link } from "react-router-dom"
 
-/**
- * SynapseKZ — TalentProfile
- *
- * Design system: "serious infrastructure", light.
- *   Base   : warm stone  #F5F2ED
- *   Surface: #FFFFFF / #FBFAF7
- *   Ink    : #1A1714
- *   Accent : deep teal #0F6E56
- *   Line   : #E4DFD5
- *
- * All logic (calcScore, score ring, incoming requests + accept/decline/
- * reveal-email, AI tips, tech autocomplete, collab/availability toggles)
- * is unchanged.
- */
 
 const C = {
   base: "#F5F2ED",
@@ -260,7 +246,7 @@ Profile:
             <div className="flex h-9 w-9 items-center justify-center rounded-md transition-transform group-hover:scale-105" style={{ background: C.accent }}>
               <Zap className="h-5 w-5 text-white" strokeWidth={2.5} />
             </div>
-            <span className="syn-display text-xl font-bold tracking-tight">SynapseKZ</span>
+            <span className="syn-display text-xl font-bold tracking-tight">SynektaKZ</span>
           </Link>
           <div className="flex items-center gap-3">
             <Link to="/dashboard">
