@@ -267,8 +267,8 @@ export default function Discover() {
   }, [allStartups, searchQuery, filterStage, filterLocation, myUserId])
 
   const aiResults = useMemo(() => ({
-    direct:    aiMatches.filter(r => r.similarity >= 0.7),
-    strategic: aiMatches.filter(r => r.similarity < 0.7 && r.similarity >= 0.4),
+    direct:    aiMatches.filter(r => r.similarity >= 0.6),  // было 0.7
+strategic: aiMatches.filter(r => r.similarity < 0.6 && r.similarity >= 0.4)
   }), [aiMatches])
 
   const seekingInvestment = useMemo(() =>
@@ -546,7 +546,7 @@ export default function Discover() {
 function ResultCard({ item, highlight=false, onConnect, isSent, insight, onGetInsight, loadingInsight, expanded, onToggleExpand, ctaMode="connect", isMine=false, canAct=true }) {
   const score   = item.similarity ? Math.round(item.similarity * 100) : null
   const ss      = stageStyle(item.stage)
-  const isStrong = highlight && score >= 70
+  const isStrong = highlight && score >= 60
   const actLabelSm = ctaMode === "invest" ? "Express Interest" : "Connect"
   const actLabelLg = ctaMode === "invest" ? "Express interest in" : "Connect with"
   const sentLabel  = ctaMode === "invest" ? "Interest Sent" : "Request Sent"
