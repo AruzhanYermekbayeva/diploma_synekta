@@ -122,9 +122,9 @@ export default function Discover() {
       const { count: collabCount } = await supabase
         .from("collaboration_requests").select("*", { count:"exact", head:true }).eq("status","accepted")
 
-      const allNeeds = (all || []).flatMap(s => s.needs || [])
-      const needCounts = allNeeds.reduce((acc, n) => { acc[n] = (acc[n]||0)+1; return acc }, {})
-      const topNeed = Object.entries(needCounts).sort((a,b) => b[1]-a[1])[0]?.[0] || ""
+      const allNeeds = (all || []).flatMap((s: any) => s.needs || [])
+      const needCounts = allNeeds.reduce((acc: Record<string, number>, n: string) => { acc[n] = (acc[n]||0)+1; return acc }, {})
+      const topNeed = Object.entries(needCounts).sort((a,b) => (b[1] as number)-(a[1] as number))[0]?.[0] || ""
       setStats({ totalStartups: all?.length||0, totalCollabs: collabCount||0, topNeed })
       setLoading(false)
     }
@@ -468,6 +468,9 @@ export default function Discover() {
                       canAct={!isTalent}
                       onConnect={() => isInvestor ? onExpressInterest(item) : onConnect(item)}
                       isSent={isInvestor ? sentInvestReqs.includes(item.id) : sentRequests.includes(item.id)}
+                      insight={undefined}
+                      onGetInsight={undefined}
+                      loadingInsight={false}
                       expanded={expandedCard === item.id}
                       onToggleExpand={() => setExpandedCard(expandedCard === item.id ? null : item.id)} />
                   )
