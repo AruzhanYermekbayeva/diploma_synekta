@@ -170,12 +170,7 @@ export default function Register() {
 
           {/* Google Button */}
          
-          <div className="my-6 flex items-center gap-3">
-            <div className="h-px flex-1" style={{ background: C.line }} />
-            <span className="syn-mono text-xs uppercase tracking-widest" style={{ color: C.muted }}>or</span>
-            <div className="h-px flex-1" style={{ background: C.line }} />
-          </div>
-
+        
           <Form {...form}>
             <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-5" noValidate>
               <FormField
