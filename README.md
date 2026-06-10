@@ -1,73 +1,67 @@
-# React + TypeScript + Vite
+# SynektaKZ
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Intelligent collaboration platform for IT startups in Kazakhstan. Matches founders, investors, and talent using semantic ML-based search.
 
-Currently, two official plugins are available:
+## Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- **Smart matching** — vector embeddings (multilingual MiniLM, 384-dim) + Jaccard index composite score, HNSW index via pgvector
+- **AI synergy insights** — LLM-generated explanations of why two profiles complement each other (Groq / LLaMA-3.1)
+- **Role-based routing** — separate flows for founders, investors, and talent
+- **Real-time notifications** — Supabase Realtime across collaboration request lifecycle
+- **Privacy-preserving handshake** — contacts revealed only on mutual acceptance via SECURITY DEFINER SQL functions
 
-## React Compiler
+## Tech Stack
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+| Layer | Stack |
+|---|---|
+| Frontend | React 18, TypeScript, Vite, Tailwind CSS, shadcn/ui |
+| Backend | Supabase (PostgreSQL, Auth, Edge Functions on Deno) |
+| Vector search | pgvector, HNSW index |
+| ML | HuggingFace `paraphrase-multilingual-MiniLM-L12-v2` |
+| LLM | Groq API (LLaMA-3.1-8b-instant) |
+| Deployment | Vercel |
 
-## Expanding the ESLint configuration
+## Getting Started
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
-
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
-
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+```bash
+git clone https://github.com/AruzhanYermekbayeva/diploma_synekta.git
+cd diploma_synekta
+npm install
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+Create a `.env` file:
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
 ```
+VITE_SUPABASE_URL=your_supabase_url
+VITE_SUPABASE_ANON_KEY=your_anon_key
+```
+
+```bash
+npm run dev
+```
+
+## How Matching Works
+
+Each startup profile is embedded into a 384-dimensional vector using a multilingual sentence transformer. Match score is computed as:
+
+```
+score = 0.7 × cosine_similarity + 0.3 × Jaccard_index
+```
+
+Profiles with `score ≥ 0.6` are considered strong matches. Validated on seed data: compatible pairs scored 0.646–0.813, incompatible pairs scored 0.119–0.142 (5.4× separation ratio).
+
+## Project Structure
+
+```
+src/
+  components/     # UI components
+  pages/          # Route-level pages (Dashboard, Discover, Profile...)
+  lib/            # Supabase client, utilities
+supabase/
+  functions/      # Edge Functions (match-startups, embed-profile, ai-synergy)
+  migrations/     # SQL migrations and RLS policies
+```
+
+## Bachelor's Diploma Project
+
+Astana IT University — Software Engineering (6B06102), 2026
